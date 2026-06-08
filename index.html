@@ -101,7 +101,7 @@
 </div></div>
 <script>
 const D=[
-{stage:1,stageName:"Прорахунок i перший контакт",stageNote:"Найбiльший потiк. Данi з файлiв ретеншну та коментарiв менеджерiв у планi 2026.",problems:[
+{stage:1,stageName:"Розрахунок i перший контакт",stageNote:"Найбiльший потiк. Данi з файлiв ретеншну та коментарiв менеджерiв у планi 2026.",problems:[
 {title:"Цiна / конкурент дешевший",count:"8",sev:"high",cases:[
 {name:"Beaver Craft",id:"101179",cat:"p",ltv:"41 502",last:"поточний",our:"н/д",their:"Мiст з експрес",summary:"Коментар менеджера в планi: частково пiшли на Мiст з експрес. Вiолетта проводила глибинку.",quote:"Глибинка з Вiолою. Частково пiшли на Мiст з експрес.",actions:"Зустрiч Анастасiї з порiвняльною таблицею.",status:"risk"},
 {name:"Гундерчук ZakharenkoStudio",id:"56463",cat:"n",ltv:"17 088",last:"поточний",our:"+100 дол/куб",their:"дешевше",summary:"Коментар менеджера в планi: сказав всi вантажi iншим, 100 дол рiзниця на кубi.",quote:"Сказав всi вантажi вiддавати iншим, 100 дол рiзниця на кубi. Плануємо зустрiч.",actions:"Анастасiя готує зустрiч.",status:"risk"},
@@ -135,7 +135,7 @@ const D=[
 {name:"Iгор Кинчарук Мiкротех",id:"69778",cat:"n",ltv:"н/д",last:"23.10.24",our:"н/д",their:"н/д",summary:"Затримка, заранi не повiдомляли, дiзнався вже в процесi.",quote:"Теоретично все ОК, але затримка, заранi не повiдомляли.",actions:"Повернутий 27.05.26. Поставки 6 062+620.",status:"ok"}
 ]},
 {title:"Менеджер не вiдповiдає / тиша",count:"2",sev:"mid",cases:[
-{name:"Євгенiй Шуляковський SEVEN Systems",id:"61167",cat:"r",ltv:"5 729",last:"2021",our:"н/д",their:"н/д",summary:"'Пообiцяли варiанти, тиша була i зовсiм нiяких вiдповiдей'.",quote:"Тиша була i зовсiм нiяких вiдповiдей.",actions:"Онлайн зустрiч з Ольшевською, прорахунки, повернули. Поставка 1 005.",status:"ok"},
+{name:"Євгенiй Шуляковський SEVEN Systems",id:"61167",cat:"r",ltv:"5 729",last:"2021",our:"н/д",their:"н/д",summary:"'Пообiцяли варiанти, тиша була i зовсiм нiяких вiдповiдей'.",quote:"Тиша була i зовсiм нiяких вiдповiдей.",actions:"Онлайн зустрiч з Ольшевською, розрахунки, повернули. Поставка 1 005.",status:"ok"},
 {name:"Артем Лук'янов Укр.Конструкцiї",id:"38343",cat:"n",ltv:"4 743",last:"18.10.23",our:"н/д",their:"н/д",summary:"Фабрика. Не пам'ятає конкретно проблему, але щось було.",quote:"Давайте перевiримо наскiльки ви покращили свою дiяльнiсть.",actions:"Повернутий 18.09.25. Поставка 2 568, ВП 1 082.",status:"work"}
 ]}
 ]},
@@ -161,7 +161,7 @@ const D=[
 const CT={r:"Ображений",n:"Не задоволений",p:"Чутливий до цiни"};
 const CK={r:"tr",n:"tn",p:"tp"};const SK={ok:"tok",lost:"tlo",risk:"tri",work:"twk"};const SLb={ok:"Повернутий",lost:"Втрачений",risk:"Пiд ризиком",work:"В роботi"};
 const HC=["#EFEAE7","#CCC7EA","#AC83E9","#8B6BC4","#5E47A0","#382D79"];
-const SN=["","Прорахунок","Узгодження","Оплата","Доставка","Видача","Утримання"];
+const SN=["","Розрахунок","Узгодження","Оплата","Доставка","Видача","Утримання"];
 let fS=0,fC="";
 function cp(n){const s=D.find(s=>s.stage===n);return s?s.problems.reduce((a,p)=>a+p.cases.length,0):0;}
 function fd(){let d=JSON.parse(JSON.stringify(D));if(fS)d=d.filter(s=>s.stage===fS);if(fC)d=d.map(s=>({...s,problems:s.problems.map(p=>({...p,cases:p.cases.filter(c=>c.cat===fC)})).filter(p=>p.cases.length>0)})).filter(s=>s.problems.length>0);return d;}

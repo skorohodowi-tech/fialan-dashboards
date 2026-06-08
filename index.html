@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fialan - Причини вiдтоку (оновлено)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F6F5;--s:#FFF;--alt:#EFEAE7;--t:#382D79;--t2:#5C5470;--t3:#9A8FB0;--a:#382D79;--a2:#AC83E9;--al:#CCC7EA;--ab:#EEEDFE;--bd:rgba(56,45,121,.1);--hi:#E65500;--hib:#FFF0E6;--mb:#F3EEFF;--lo:#92650B;--lb:#FFF8E1;--gb:#F0EDE8;--gy:#7A7470;--gn:#2E7D32;--gnb:#E8F5E9;--r:12px;--rs:8px;--f:'DM Sans',sans-serif;--m:'DM Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--f);background:var(--bg);color:var(--t);-webkit-font-smoothing:antialiased}
+.hdr{padding:32px 40px 0;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr-b{font-size:14px;font-weight:500;color:var(--a2);letter-spacing:1px;text-transform:uppercase}.hdr-tg{font-size:12px;color:var(--t3);margin-left:auto}
+.ttl{padding:8px 40px 0;max-width:1200px;margin:0 auto}.ttl h1{font-size:24px;font-weight:700;color:var(--a)}.ttl p{font-size:14px;color:var(--t2);margin-top:4px}
+.sts{display:flex;gap:12px;padding:20px 40px;max-width:1200px;margin:0 auto;flex-wrap:wrap}
+.st{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:16px 20px;min-width:120px;flex:1}.st .n{font-size:28px;font-weight:700;color:var(--a)}.st .l{font-size:12px;color:var(--t3);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.hms{padding:0 40px;max-width:1200px;margin:0 auto 8px}.hmt{font-size:12px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.hm{display:flex;gap:6px;align-items:flex-end;height:120px}
+.hmc{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end;cursor:pointer;transition:opacity .15s}.hmc:hover{opacity:.85}.hmc.on .hml{font-weight:700;color:var(--t)}
+.hmb{width:100%;border-radius:6px 6px 0 0;transition:all .3s;position:relative;min-height:8px}.hmn{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:700;font-family:var(--m)}.hml{font-size:11px;color:var(--t2);text-align:center;line-height:1.3}
+.fl{padding:10px 40px;max-width:1200px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap}
+.fb{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--bd);background:var(--s);color:var(--t2);transition:all .15s;font-family:var(--f)}.fb:hover{border-color:var(--al);color:var(--t)}.fb.on{background:var(--a);color:#fff;border-color:var(--a)}
+.lg{display:flex;gap:16px;padding:4px 40px 12px;max-width:1200px;margin:0 auto;flex-wrap:wrap}.lgi{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3)}.lgd{width:12px;height:4px;border-radius:2px}
+.pp{padding:8px 40px 20px;max-width:1200px;margin:0 auto}
+.sg{margin-bottom:24px}.sgh{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.sgn{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;color:#fff}
+.sgt{font-size:16px;font-weight:700;color:var(--t)}.sgc{font-size:12px;color:var(--t3);font-family:var(--m)}
+.sgbar{margin:0 0 8px 44px;height:6px;background:var(--alt);border-radius:3px;overflow:hidden}.sgbf{height:100%;border-radius:3px;transition:width .4s}
+.sgnt{font-size:13px;color:var(--t2);margin:0 0 12px 44px;line-height:1.5}
+.pbs{margin-left:44px;display:flex;flex-direction:column;gap:8px}
+.pb{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden;transition:border-color .15s}.pb:hover{border-color:var(--al)}.pb.op{border-color:var(--al)}
+.pbh{padding:14px 18px;display:flex;align-items:center;gap:12px;cursor:pointer}
+.pbs2{width:4px;height:32px;border-radius:2px;flex-shrink:0}
+.shi{background:#E65500}.smi{background:#AC83E9}.slo{background:var(--al)}.sin{background:var(--t3)}
+.pbt{font-size:14px;font-weight:500;color:var(--t);flex:1}
+.pbc{font-size:12px;font-weight:500;padding:3px 10px;border-radius:10px;white-space:nowrap}
+.pchi{background:var(--hib);color:#E65500}.pcmi{background:var(--mb);color:var(--a)}.pclo{background:var(--lb);color:var(--lo)}.pcin{background:var(--gb);color:var(--gy)}
+.pba{font-size:10px;color:var(--t3);transition:transform .2s;margin-left:4px}.pb.op .pba{transform:rotate(90deg)}
+.cw{max-height:0;overflow:hidden;transition:max-height .3s}.pb.op .cw{max-height:6000px}
+.css{padding:0 18px 14px 34px}
+.cc{background:var(--alt);border-radius:var(--rs);padding:14px 16px;margin-top:8px}
+.ctp{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
+.cnm{font-size:14px;font-weight:700;color:var(--t)}.cid{font-size:11px;font-family:var(--m);color:var(--t3)}
+.ctg{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
+.tg{font-size:10px;padding:2px 8px;border-radius:6px;font-weight:500}
+.tr{background:#FFE0CC;color:#E65500}.tn{background:var(--ab);color:var(--a)}.tp{background:#FFF3D6;color:#92650B}
+.tok{background:var(--gnb);color:var(--gn)}.tlo{background:var(--hib);color:#E65500}.tri{background:#FFF3D6;color:#92650B}.twk{background:#E8E0F0;color:#5E47A0}
+.cmt{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-bottom:10px}.cml{font-size:12px;color:var(--t3)}.cmv{font-size:12px;color:var(--t);font-weight:500}
+.csm{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:8px}
+.cq{border-left:3px solid var(--a2);padding:8px 14px;font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:8px;font-style:italic;background:rgba(172,131,233,.06)}
+.cac{font-size:12px;color:var(--t3);line-height:1.5}.cac strong{color:var(--t2);font-weight:500}
+.xc{max-width:1200px;margin:12px auto 40px;padding:0 40px}
+.xcc{background:#382D79;border:none;border-radius:var(--r);padding:20px 24px}.xct{font-size:14px;font-weight:700;color:#fff}.xcx{font-size:13px;color:#CCC7EA;margin-top:6px;line-height:1.5}
+.conv{max-width:1200px;margin:0 auto;padding:20px 40px}
+.conv-t{font-size:18px;font-weight:700;color:var(--a);margin-bottom:4px}.conv-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
+.conv-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;height:36px}
+.conv-label{width:220px;font-size:13px;color:var(--t2);text-align:right;flex-shrink:0}
+.conv-bars{flex:1;display:flex;align-items:center;height:28px;position:relative;background:var(--alt);border-radius:4px;overflow:visible}
+.conv-bar{height:100%;border-radius:4px;position:relative;transition:width .4s;min-width:2px}
+.conv-bar-ret{position:absolute;top:0;left:0;height:100%;border-radius:4px;transition:width .4s}
+.conv-nums{display:flex;align-items:center;gap:4px;margin-left:8px;white-space:nowrap;font-size:12px;font-family:var(--m)}
+.conv-nums .all{color:var(--t2)}.conv-nums .ret{color:var(--gn);font-weight:500}.conv-nums .pct{color:var(--a);font-weight:700}
+.rpt{max-width:1200px;margin:0 auto;padding:0 40px 20px}
+.rpt-t{font-size:18px;font-weight:700;color:var(--a);margin-bottom:4px}.rpt-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
+.rpt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.rpt-c{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:16px 20px}
+.rpt-name{font-size:14px;font-weight:700;color:var(--a);margin-bottom:6px}
+.rpt-hist{font-size:12px;color:var(--t2);line-height:1.6}
+.rpt-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:500;background:var(--hib);color:#E65500;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#382D79"/><path d="M10 28L18 12M22 12L30 28M14 22H26" stroke="#AC83E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="hdr-b">Fialan</span><span class="hdr-tg">Ретеншн + транскрипти + план 2026</span>
+</div>
+<div class="ttl"><h1>Причини вiдтоку клiєнтiв</h1><p>10 категорiй проблем по 6 етапах CJM. 40+ кейсiв з оновленої бази ретеншну.</p></div>
+<div class="sts" id="sts"></div>
+<div class="hms"><div class="hmt">Концентрацiя по етапах</div><div class="hm" id="hm"></div></div>
+<div class="fl" id="fl"></div>
+<div class="lg">
+  <div class="lgi"><div class="lgd" style="background:#E65500"></div>5+ кейсiв</div>
+  <div class="lgi"><div class="lgd" style="background:#AC83E9"></div>2-4 кейси</div>
+  <div class="lgi"><div class="lgd" style="background:#CCC7EA"></div>1-2 кейси</div>
+  <div class="lgi"><div class="lgd" style="background:var(--t3)"></div>Поодинокi</div>
+</div>
+<div class="pp" id="pp"></div>
+<div class="conv" id="conv">
+  <div class="conv-t">Причина вiдтоку vs повернення</div>
+  <div class="conv-sub">Скiльки клiєнтiв з кожною причиною вдалось повернути. Зеленi = повернутi, сiрi = всього.</div>
+</div>
+
+<div class="rpt">
+  <div class="rpt-t">Проблеми, якi повторюються роками</div>
+  <div class="rpt-sub">Клiєнти, якi пiшли, повернулись i знову стикнулись з тiєю самою проблемою.</div>
+  <div class="rpt-cards" id="rpt"></div>
+</div>
+
+<div class="xc"><div class="xcc">
+  <div class="xct">Наскрiзнi проблеми: текучка менеджерiв + вiдсутнiсть коментарiв + реферальна замiсть оферу</div>
+  <div class="xcx">Текучка: Власюк (LTV 15 577): "то був Василь, то iнша дiвчина, перестав фiксувати". Vip Systems: "дуже багато рiзних менеджерiв!" Коментарi: по 5 з 10 найбiльших клiєнтiв P1 менеджер не дав коментаря ("?"). Miss Diamond впала з 56 110 до 1 002, коментар: "? немає коментаря". Реферальна: з 9 транскриптiв менеджери пропонують 200 дол за рекомендацiю в 4 дзвiнках. Результат: 0 реакцiй.</div>
+</div></div>
+<script>
+const D=[
+{stage:1,stageName:"Прорахунок i перший контакт",stageNote:"Найбiльший потiк. Три пiдтипи: реальна рiзниця 30%+, конкурент дешевший на конкретному маршрутi, клiєнт не розумiє що входить у цiну.",problems:[
+{title:"Цiна / конкурент дешевший",count:"12+",sev:"high",cases:[
+{name:"Beaver Craft (P1, GAP 36 510)",id:"101179",cat:"n",ltv:"41 502",last:"поточний",our:"н/д",their:"Мiст з експрес",summary:"Частково пiшли на Мiст. Вiолетта проводила глибинку.",quote:"Глибинка з Вiолою. Частково пiшли на Мiст з експрес.",actions:"Зустрiч Анастасiї з порiвняльною таблицею.",status:"risk"},
+{name:"Гундерчук ZakharenkoStudio (P1, GAP 17 854)",id:"56463",cat:"n",ltv:"17 088",last:"поточний",our:"+100 дол/куб",their:"дешевше",summary:"Сказав всi вантажi iншим. 100 дол рiзниця на кубi.",quote:"Плануємо зустрiч. 100 дол рiзниця на кубi.",actions:"Анастасiя готує зустрiч з накопичувальним тарифом.",status:"risk"},
+{name:"TORSSEN (P2, GAP 12 341)",id:"12152",cat:"n",ltv:"29 187",last:"поточний",our:"дорожче море",their:"дешевше море",summary:"Авiа нам, море конкуренту.",quote:"Авiа вiддають нам, море їм дають дешевше нiж у нас.",actions:"Перерахунок морського тарифу.",status:"risk"},
+{name:"Вiталiй VL AUDIO",id:"92532",cat:"p",ltv:"2 458",last:"19.09.23",our:"вище",their:"н/д",summary:"'Трохи вище цiни, 2-3 мiсце, але сервiс вирiшує, коли з нами везе не переживає.'",quote:"Класний сервiс, але наразi не так часто iмпортує.",actions:"Повернутий 04.08.25. Поставка 877, ВП 295.",status:"work"},
+{name:"Петро Тимкiв BathMix",id:"62484",cat:"p",ltv:"10 044",last:"09.12.22",our:"н/д",their:"н/д",summary:"Вiддав контейнер iншим по тiй цiнi що i ми могли дати, але ми спершу дали вище.",quote:"Памятає про нас. Питання по цiнi, вiдправляє з ким вигiднiше. Потрiбно бiльше ваги.",actions:"Повернутий 30.10.25. Поставка 704, ВП 327.",status:"work"},
+{name:"Сергiй Мостовий",id:"75752",cat:"p",ltv:"1 790",last:"2023",our:"вище",their:"рiзнi",summary:"Працює з рiзними по цiнi. Каже: на невеликi партiї невигiдно.",quote:"Дивився подкаст з нашими керiвницями i був здивований що це жiнки.",actions:"Повернутий 19.11.25. Поставка 1 153, ВП 368.",status:"work"},
+{name:"Волвач Гiдромонтаж",id:"53949",cat:"p",ltv:"2 779",last:"10.10.24",our:"н/д",their:"київська компанiя",summary:"Київська компанiя переманила кращими тарифами.",quote:"Говорить набирати менеджера, бо не в країнi.",actions:"Повернутий 12.01.26. Поставка 2 592, ВП 508.",status:"work"},
+{name:"Iрина Степанченко",id:"7804",cat:"p",ltv:"н/д",last:"13.12.23",our:"н/д",their:"дешевше",summary:"Керiвник вирiшив працювати з тими хто дешевше. Готова дати на прорахунок.",quote:"Питання тiльки в цiнi.",actions:"Повернутий 27.05.26. Поставка 787, ВП 197.",status:"ok"}
+]},
+{title:"Дзвiнок без пiдготовки / без оферу",count:"8+",sev:"mid",cases:[
+{name:"Miss Diamond (P1, GAP 47 996)",id:"95794",cat:"n",ltv:"56 110",last:"поточний",our:"н/д",their:"н/д",summary:"Deep Research: премiум одяг (IG 496K, бутики). Оля не коментує. Найбiльший GAP.",quote:"? немає коментаря (менеджер по клiєнту з LTV 120 199).",actions:"Анастасiя дзвонить. Що сталось?",status:"risk"},
+{name:"Прокомпакт (P1, GAP 24 614)",id:"6293",cat:"n",ltv:"42 518",last:"поточний",our:"н/д",their:"н/д",summary:"Deep Research: опт швейного обладнання Bruce/Jack. В CRM 'пакувальнi матерiали'.",quote:"? немає коментаря (39 угод за 2025, менеджер не знає бiзнес клiєнта).",actions:"Анастасiя з'ясовує причину.",status:"risk"},
+{name:"Самвел (транскрипт)",id:"транскр.",cat:"n",ltv:"н/д",last:"Q1 2026",our:"н/д",their:"н/д",summary:"Менеджер пропонує Туреччину вiрменину. Потiм пошук постачальникiв, клiєнт має свою людину.",quote:"Забудьте Турцiю, я вiрменин. Це табу.",actions:"Запитати параметри вантажу, пiдготувати прорахунок.",status:"risk"},
+{name:"Артем бочка хiмiї (транскрипт)",id:"транскр.",cat:"n",ltv:"н/д",last:"поточний",our:"н/д",their:"Ютек 800",summary:"Клiєнт сам каже: бочка 200л, фрахт 800 дол. Менеджер переходить до реферальної.",quote:"Бочка 200 л, фрахт 800 долларiв.",actions:"Не пiдхопив. Потрiбно прорахувати.",status:"lost"}
+]},
+{title:"'Зiдзвонимось через мiсяць'",count:"8 з 9",sev:"high",cases:[
+{name:"Системна (9 транскриптiв)",id:"транскр.",cat:"n",ltv:"рiзне",last:"поточний",our:"н/д",their:"н/д",summary:"8 з 9 дзвiнкiв: 'зiдзвонимось через мiсяць'. 0 прорахункiв пiсля. 0 конкретних next step.",quote:"Вiталiй: 'через мiсяць збiрний'. Менеджер: 'добре, на зв'язку'. Самвел: '7 тис через мiсяць'. Менеджер: 'хорошо, услышала'.",actions:"Правило: кожен дзвiнок = дiя менеджера з датою. 'Надiшлю прорахунок до п'ятницi'.",status:"risk"}
+]}
+]},
+{stage:2,stageName:"Узгодження, договiр",stageNote:"Клiєнт вибрав нас i ми його втрачаємо на стартi.",problems:[
+{title:"Затягнуте узгодження",count:"1",sev:"mid",cases:[
+{name:"Андрiй ЮАтент",id:"11728",cat:"p",ltv:"20 619",last:"09.12.24",our:"н/д",their:"н/д",summary:"30-40 днiв узгодження замiсть 2-3. Працював з 2017.",quote:"Завжди 2-3 днi, а цей раз 30-40 днiв.",actions:"Повернутий 20.06.25. Поставка 240, ВП 57.",status:"work"}
+]},
+{title:"Несподiванi умови / недовiра",count:"2",sev:"lo",cases:[
+{name:"Артем Кулiнiч",id:"73790",cat:"r",ltv:"368",last:"12.11.24",our:"н/д",their:"н/д",summary:"Дiзнався пiсля старту що вантаж ховатимуть. Документи мав.",quote:"Чому одразу не оговорили всi деталi стосовно документiв.",actions:"Повернутий 13.05.25. Поставка 1 615, ВП 537.",status:"ok"},
+{name:"Iван Gemini Sport",id:"54484",cat:"r",ltv:"6 136",last:"20.09.22",our:"н/д",their:"н/д",summary:"'Зливаєте постачальникiв'. Довго iгнорив менеджера.",quote:"Надаєте послугу пошуку постачальника i зливаєте тих, яких напрацьовував роками.",actions:"Ескалацiя. Повернутий 23.07.25. Поставка 27 541, ВП 1 299.",status:"ok"}
+]}
+]},
+{stage:3,stageName:"Оплата та фiнанси",stageNote:"Системнi проблеми з документами i фiн. грамотнiстю менеджерiв.",problems:[
+{title:"Менеджер не знає документiв",count:"2",sev:"mid",cases:[
+{name:"Вадим ГИФТ-К (Олена фiн.дир.)",id:"46883",cat:"r",ltv:"2 103",last:"2024",our:"н/д",their:"н/д",summary:"Фiн.директор клiєнта вчить менеджера. 'Питає якою датою вiдписати видаткову, це не нормально'.",quote:"Не перший раз що їй приходиться вчити нашого менеджера фiнансовим моментам.",actions:"Повернутий 19.11.25. Олена сама зателефонувала. Поставка 882, ВП 538.",status:"ok"},
+{name:"Vip Systems (документи для податкової)",id:"42485",cat:"n",ltv:"1 191",last:"23.01.24",our:"н/д",their:"н/д",summary:"Постачальник просив доки що ми перевозили (податкова), ми не могли надати.",quote:"По можливостi не змiнювати менеджера!",actions:"Повернутий 25.03.26. Поставка 580, ВП 235.",status:"ok"}
+]}
+]},
+{stage:4,stageName:"Доставка та супровiд",stageNote:"Тут 'дорого' перетворюється на 'ображений'. Затримки без попередження, недоступнiсть менеджерiв.",problems:[
+{title:"Затримки без попередження",count:"5+",sev:"high",cases:[
+{name:"Iван Гопкало (LTV 52 483, 42 реалiз.)",id:"61688",cat:"n",ltv:"52 483",last:"23.12.24",our:"н/д",their:"н/д",summary:"Протестував 3 компанiї: у нас найпiзнiше. Весь 2024 рiк. Ранiше було супер.",quote:"Основний i єдиний момент чому пiшов. Все iнше: сервiс, менеджери, все подобається.",actions:"Повернутий 22.09.25. 4 реалiзацiї, ВП 1 441. VIP сертифiкат 350.",status:"work"},
+{name:"Денис LED Line (двiчi пiшов)",id:"54964",cat:"n",ltv:"2 318",last:"2022",our:"н/д",their:"н/д",summary:"Двiчi пiшов (2021 i 2022) через те саме. Виїхав з країни, обороти впали.",quote:"Строки змiнюються i не попереджували. Важливо iнформувати. Затримки розумiє. Але попереджайте.",actions:"Повернутий 27.11.25. Поставка 2 399, ВП 172.",status:"work"},
+{name:"Iгор Кинчарук Мiкротех",id:"69778",cat:"n",ltv:"н/д",last:"23.10.24",our:"н/д",their:"н/д",summary:"Затримка, заранi не повiдомляли, дiзнався вже в процесi.",quote:"Теоретично все ОК, але затримка, заранi не повiдомляли.",actions:"Повернутий 27.05.26. Поставки 6 062+620.",status:"ok"}
+]},
+{title:"Менеджер не вiдповiдає / тиша",count:"2",sev:"mid",cases:[
+{name:"Євгенiй Шуляковський SEVEN Systems",id:"61167",cat:"r",ltv:"5 729",last:"2021",our:"н/д",their:"н/д",summary:"'Пообiцяли варiанти, тиша була i зовсiм нiяких вiдповiдей'.",quote:"Тиша була i зовсiм нiяких вiдповiдей.",actions:"Онлайн зустрiч з Ольшевською, прорахунки, повернули. Поставка 1 005.",status:"ok"},
+{name:"Артем Лук'янов Укр.Конструкцiї",id:"38343",cat:"n",ltv:"4 743",last:"18.10.23",our:"н/д",their:"н/д",summary:"Фабрика. Не пам'ятає конкретно проблему, але щось було.",quote:"Давайте перевiримо наскiльки ви покращили свою дiяльнiсть.",actions:"Повернутий 18.09.25. Поставка 2 568, ВП 1 082.",status:"work"}
+]}
+]},
+{stage:5,stageName:"Видача, митниця, документи",stageNote:"Найболючiшi за сумами збиткiв. Страховка 'на словах'.",problems:[
+{title:"Пошкодження без компенсацiї",count:"1",sev:"high",cases:[
+{name:"Олександр Годулян Evel",id:"96073",cat:"r",ltv:"2 864",last:"06.12.24",our:"н/д",their:"н/д",summary:"Переупакували з двох палет на одну, палета розiрвалась. Мiнус 3 000 дол. Страховий випадок з грудня не закритий.",quote:"Нас просто бортанули. Страховка за яку платить, це лише на словах. Мiнус 3 тис дол.",actions:"Повернутий 28.04.26. Поставка 590, ВП 107. Страховий досi не закритий.",status:"risk"}
+]},
+{title:"Неякiсна перевiрка QC",count:"1",sev:"mid",cases:[
+{name:"Наталья Почуева ТОВ ДВЕ (LTV 27 474)",id:"88552",cat:"r",ltv:"27 474",last:"2022-2026",our:"н/д",their:"н/д",summary:"З 2021 року завжди брак. 50%+ браку в останньому контейнерi. Зустрiч маркетинг+продажi+ретеншн.",quote:"Прям багато товару вiдбраковано i тому це великий плюс. Дуже вдячнi за проведену роботу.",actions:"Безкоштовна перевiрка + менеджер на зв'язку. 3 реалiзацiї, ВП 2 846.",status:"work"}
+]},
+{title:"Невiрна вага / доплати",count:"1",sev:"lo",cases:[
+{name:"Вiталiй ТехноЗбут24",id:"81238",cat:"n",ltv:"2 120",last:"2023",our:"н/д",their:"н/д",summary:"9 кг рiзницi, менеджер: 'все правильно'. Знову конфлiкт по вазi.",quote:"9 кг це не мало. Менеджер повернувся з 'все правильно' i не будемо перераховувати.",actions:"Повернутий 15.09.25. 3 поставки, ВП 916. Але знову конфлiкт.",status:"risk"}
+]}
+]},
+{stage:6,stageName:"Пiсля видачi / утримання",stageNote:"Тихий вiдтiк через текучку кадрiв i вiдсутнiсть follow-up.",problems:[
+{title:"Текучка менеджерiв",count:"3+",sev:"high",cases:[
+{name:"Сергiй Власюк (LTV 15 577, 28 поставок)",id:"5144",cat:"n",ltv:"15 577",last:"17.01.24",our:"н/д",their:"н/д",summary:"З нами з 2017. 'Дуже висока текучка кадрiв'. Згадав Лiтвякову.",quote:"То був Василь, то iнша дiвчина дзвонить з того ж номеру, i я перестав це фiксувати.",actions:"Повернутий 22.04.26. Поставка 2 628, ВП 500. Але не ранiше осенi.",status:"work"},
+{name:"Анатолiй Vip Systems",id:"42485",cat:"n",ltv:"1 191",last:"23.01.24",our:"н/д",their:"н/д",summary:"Те саме: 'дуже багато рiзних менеджерiв'.",quote:"По можливостi не змiнювати менеджера найближчим часом!",actions:"Повернутий 25.03.26. Поставка 580.",status:"ok"},
+{name:"Олександр Соколов Sokol SHOP",id:"71968",cat:"n",ltv:"5 029",last:"28.09.21",our:"н/д",their:"конкуренти",summary:"Не возив з 2021. Працює з фенами, обсяги зростають. Карго вiдповiдає раз на 2 тижнi.",quote:"Не хоче вiддавати все в одну компанiю, обсяги стали бiльше, хоче змiнити поточне карго.",actions:"Повернутий 25.03.26. Поставка 7 366, ВП 791.",status:"ok"}
+]},
+{title:"Реферальна замiсть оферу",count:"4 з 9",sev:"lo",cases:[
+{name:"Системна (транскрипти)",id:"транскр.",cat:"n",ltv:"рiзне",last:"поточний",our:"н/д",their:"н/д",summary:"4 з 9 дзвiнкiв: менеджер пропонує 200 дол за рекомендацiю. 0 реакцiй.",quote:"Артем: 'мало таких як я'. Вiктор: 'взяв на замiтку'. Ярослав: 'добро'.",actions:"Прибрати з холодних дзвiнкiв. Просувати пiсля успiшної поставки.",status:"risk"}
+]}
+]}
+];
+const CT={r:"Ображений",n:"Не задоволений",p:"Чутливий до цiни"};
+const CK={r:"tr",n:"tn",p:"tp"};const SK={ok:"tok",lost:"tlo",risk:"tri",work:"twk"};const SLb={ok:"Повернутий",lost:"Втрачений",risk:"Пiд ризиком",work:"В роботi"};
+const HC=["#EFEAE7","#CCC7EA","#AC83E9","#8B6BC4","#5E47A0","#382D79"];
+const SN=["","Прорахунок","Узгодження","Оплата","Доставка","Видача","Утримання"];
+let fS=0,fC="";
+function cp(n){const s=D.find(s=>s.stage===n);return s?s.problems.reduce((a,p)=>a+p.cases.length,0):0;}
+function fd(){let d=JSON.parse(JSON.stringify(D));if(fS)d=d.filter(s=>s.stage===fS);if(fC)d=d.map(s=>({...s,problems:s.problems.map(p=>({...p,cases:p.cases.filter(c=>c.cat===fC)})).filter(p=>p.cases.length>0)})).filter(s=>s.problems.length>0);return d;}
+function rs(d){const t=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.length,0),0);const ob=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.cat==='r').length,0),0);const ri=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.status==='risk').length,0),0);const wk=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.status==='work').length,0),0);
+document.getElementById('sts').innerHTML=[{n:t,l:"кейсiв"},{n:ob,l:"ображених"},{n:ri,l:"пiд ризиком"},{n:wk,l:"в роботi"}].map(s=>`<div class="st"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join('');}
+function rh(){const c=[1,2,3,4,5,6].map(i=>cp(i));const mx=Math.max(...c);document.getElementById('hm').innerHTML=c.map((v,i)=>{const p=mx>0?Math.max(v/mx*100,8):8;const ii=mx>0?Math.min(Math.floor(v/mx*5),5):0;const cl=HC[ii];const nc=ii>=3?'#fff':'var(--t)';const a=fS===(i+1)?' on':'';return`<div class="hmc${a}" onclick="sf(${fS===(i+1)?0:i+1},'${fC}')"><div class="hmb" style="height:${p}%;background:${cl}"><div class="hmn" style="color:${nc}">${v}</div></div><div class="hml">${SN[i+1]}</div></div>`;}).join('');}
+function rf(){const cs=["","r","n","p"],cl=["Всi","Ображенi","Не задоволенi","Чутливi до цiни"];document.getElementById('fl').innerHTML=`<div class="fb${fS===0?' on':''}" onclick="sf(0,'${fC}')">Всi етапи</div>`+cs.map((c,i)=>`<div class="fb${fC===c?' on':''}" onclick="sf(${fS},'${c}')">${cl[i]}</div>`).join('');}
+function scl(c,mx){if(!mx)return'#382D79';const r=c/mx;return r>.7?'#382D79':r>.4?'#5E47A0':r>.2?'#8B6BC4':'#AC83E9';}
+function rp(d){const mx=Math.max(...[1,2,3,4,5,6].map(i=>cp(i)));document.getElementById('pp').innerHTML=d.map(st=>{const sc=st.problems.reduce((a,p)=>a+p.cases.length,0);const bp=mx>0?Math.max(sc/mx*100,3):3;const bc=scl(sc,mx);
+return`<div class="sg"><div class="sgh"><div class="sgn" style="background:${bc}">${st.stage}</div><div><span class="sgt">${st.stageName}</span> <span class="sgc">${sc} кейсiв</span></div></div><div class="sgbar"><div class="sgbf" style="width:${bp}%;background:${bc}"></div></div><div class="sgnt">${st.stageNote}</div><div class="pbs">${st.problems.map((p,pi)=>`<div class="pb" id="p${st.stage}${pi}" onclick="tg('p${st.stage}${pi}')"><div class="pbh"><div class="pbs2 s${p.sev}"></div><div class="pbt">${p.title}</div><div class="pbc pc${p.sev}">${p.count}</div><div class="pba">&#9654;</div></div><div class="cw"><div class="css">${p.cases.map(c=>`<div class="cc"><div class="ctp"><div class="cnm">${c.name}</div><div class="cid">ID ${c.id}</div></div><div class="ctg"><span class="tg ${CK[c.cat]||'tn'}">${CT[c.cat]||''}</span><span class="tg ${SK[c.status]||'tri'}">${SLb[c.status]||''}</span></div><div class="cmt">${c.ltv&&c.ltv!=='н/д'?`<div><span class="cml">LTV</span><br><span class="cmv">${c.ltv}</span></div>`:''}${c.last&&c.last!=='н/д'?`<div><span class="cml">Остання</span><br><span class="cmv">${c.last}</span></div>`:''}${c.our&&c.our!=='н/д'?`<div><span class="cml">Наша цiна</span><br><span class="cmv">${c.our}</span></div>`:''}${c.their&&c.their!=='н/д'?`<div><span class="cml">Конкурент</span><br><span class="cmv">${c.their}</span></div>`:''}</div><div class="csm">${c.summary}</div><div class="cq">${c.quote}</div><div class="cac"><strong>Дiї:</strong> ${c.actions}</div></div>`).join('')}</div></div></div>`).join('')}</div></div>`;}).join('');}
+function tg(id){document.getElementById(id).classList.toggle('op');}
+function sf(s,c){fS=s;fC=c;render();}
+function render(){const d=fd();rs(d);rh();rf();rp(d);rc();rr();}
+
+function rc(){
+const reasons=[
+{label:"Цiна / конкурент дешевший",total:12,returned:7,retLTV:"36 978"},
+{label:"Дзвiнок без пiдготовки / оферу",total:8,returned:0,retLTV:"0"},
+{label:"Зiдзвонимось без next step",total:8,returned:0,retLTV:"0"},
+{label:"Затримки без попередження",total:5,returned:4,retLTV:"5 049"},
+{label:"Текучка менеджерiв",total:3,returned:2,retLTV:"3 128"},
+{label:"Менеджер не вiдповiдає",total:2,returned:2,retLTV:"2 083"},
+{label:"Несподiванi умови / недовiра",total:2,returned:2,retLTV:"1 836"},
+{label:"Документи / фiн. грамотнiсть",total:2,returned:2,retLTV:"773"},
+{label:"Пошкодження без компенсацiї",total:1,returned:1,retLTV:"107"},
+{label:"Неякiсна перевiрка QC",total:1,returned:1,retLTV:"2 846"},
+{label:"Невiрна вага / доплати",total:1,returned:1,retLTV:"916"}
+];
+const mx=Math.max(...reasons.map(r=>r.total));
+const el=document.getElementById('conv');
+let h=el.innerHTML;
+reasons.forEach(r=>{
+const wp=Math.max(r.total/mx*100,5);
+const rp2=r.total>0?(r.returned/r.total*100):0;
+const rwp=wp*rp2/100;
+const pct=Math.round(rp2);
+const bc=pct>=60?'#2E7D32':pct>=30?'#92650B':'#E65500';
+h+=`<div class="conv-row">
+<div class="conv-label">${r.label}</div>
+<div class="conv-bars">
+<div class="conv-bar" style="width:${wp}%;background:var(--alt)">
+<div class="conv-bar-ret" style="width:${rp2}%;background:${pct>=60?'#C8E6C9':pct>=30?'#FFF3D6':'#FFCCBC'}"></div>
+</div>
+</div>
+<div class="conv-nums">
+<span class="ret">${r.returned}</span><span class="all">/ ${r.total}</span>
+<span class="pct" style="color:${bc}">${pct}%</span>
+</div>
+</div>`;
+});
+el.innerHTML=h;
+}
+
+function rr(){
+const reps=[
+{name:"Денис LED Line",id:"54964",history:"2021: пiшов, причина: не iнформують на контрольних точках. Повернувся. 2022: пiшов знову, та сама причина. Повернувся 27.11.25. Проблема з iнформуванням досi не вирiшена системно.",tag:"3 рази та сама проблема"},
+{name:"Вiталiй ТехноЗбут24",id:"81238",history:"Перший конфлiкт по вазi: 9 кг рiзницi, менеджер 'все правильно'. Повернувся 15.09.25, 3 поставки. Знову конфлiкт по вазi при останньому замовленнi. Та сама проблема двiчi.",tag:"Повторний конфлiкт по вазi"},
+{name:"Вадим ГИФТ-К",id:"46883",history:"Олена (фiн.дир.) кiлька разiв вчила менеджера оформляти документи. Каже: 'це не перший раз'. Проблема не в одному випадку, а в системнiй нестачi знань менеджерiв по фiн.документах.",tag:"Повторюється з рiзними менеджерами"},
+{name:"Iван Гопкало",id:"61688",history:"До вiйни все було супер. 2024 рiк: 'дуже довго веземо весь рiк'. Протестував 3 компанiї, у нас найпiзнiше. Повернувся з VIP сертифiкатом, 4 реалiзацiї. Якщо затримки повторяться, пiде втретє.",tag:"Проблема 2024 року: строки"},
+{name:"Олександр Годулян Evel",id:"96073",history:"Грудень 2024: пошкодження батарей при переупаковцi. Мiнус 3 000 дол. Страховий випадок досi не закритий (6+ мiсяцiв). Повернувся 28.04.26 з мiнiмальною поставкою 590 дол. Якщо страховку не закриють, пiде остаточно.",tag:"Страховий не закритий 6+ мiс"}
+];
+document.getElementById('rpt').innerHTML=reps.map(r=>`<div class="rpt-c">
+<div class="rpt-name">${r.name} <span style="font-size:11px;font-weight:400;color:var(--t3)">ID ${r.id}</span></div>
+<div class="rpt-hist">${r.history}</div>
+<div class="rpt-tag">${r.tag}</div>
+</div>`).join('');
+}
+render();
+</script>
+</body>
+</html>

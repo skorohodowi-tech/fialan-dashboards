@@ -61,11 +61,24 @@
 .conv-nums .all{color:var(--t2)}.conv-nums .ret{color:var(--gn);font-weight:500}.conv-nums .pct{color:var(--a);font-weight:700}
 .rpt{max-width:1200px;margin:0 auto;padding:0 40px 20px}
 .rpt-t{font-size:18px;font-weight:700;color:var(--a);margin-bottom:4px}.rpt-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
-.rpt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.rpt-c{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:16px 20px}
-.rpt-name{font-size:14px;font-weight:700;color:var(--a);margin-bottom:6px}
-.rpt-hist{font-size:12px;color:var(--t2);line-height:1.6}
-.rpt-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:500;background:var(--hib);color:#E65500;margin-top:8px}
+.rpt-cards{display:flex;flex-direction:column;gap:16px}
+.rpt-c{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:20px 24px;display:grid;grid-template-columns:200px 1fr;gap:20px}
+.rpt-left{display:flex;flex-direction:column;gap:8px}
+.rpt-name{font-size:16px;font-weight:700;color:var(--a)}.rpt-id{font-size:11px;font-family:var(--m);color:var(--t3)}
+.rpt-ltv{font-size:13px;color:var(--t2);margin-top:4px}
+.rpt-tag{display:inline-block;font-size:11px;padding:4px 12px;border-radius:6px;font-weight:600;background:var(--hib);color:#E65500;margin-top:auto;align-self:flex-start}
+.rpt-right{display:flex;flex-direction:column;gap:0}
+.rpt-reason{font-size:14px;font-weight:600;color:var(--a);margin-bottom:10px}
+.rpt-tl{position:relative;padding-left:24px}
+.rpt-tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--al)}
+.rpt-ev{position:relative;padding:8px 0;font-size:13px;color:var(--t2);line-height:1.6}
+.rpt-ev::before{content:'';position:absolute;left:-20px;top:14px;width:10px;height:10px;border-radius:50%;border:2px solid var(--a2);background:var(--s)}
+.rpt-ev.bad::before{background:#E65500;border-color:#E65500}
+.rpt-ev.ok::before{background:var(--gn);border-color:var(--gn)}
+.rpt-ev.cur::before{background:var(--a);border-color:var(--a)}
+.rpt-yr{font-weight:600;color:var(--a);margin-right:6px}
+.rpt-q{border-left:3px solid var(--a2);padding:6px 12px;margin:6px 0;font-style:italic;font-size:12px;color:var(--t3);background:rgba(172,131,233,.06);border-radius:0 4px 4px 0}
+@media(max-width:768px){.rpt-c{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -216,16 +229,51 @@ el.innerHTML=h;
 
 function rr(){
 const reps=[
-{name:"Денис LED Line",id:"54964",history:"2021: пiшов, причина: не iнформують на контрольних точках. Повернувся. 2022: пiшов знову, та сама причина. Повернувся 27.11.25. Проблема з iнформуванням досi не вирiшена системно.",tag:"3 рази та сама проблема"},
-{name:"Вiталiй ТехноЗбут24",id:"81238",history:"Перший конфлiкт по вазi: 9 кг рiзницi, менеджер 'все правильно'. Повернувся 15.09.25, 3 поставки. Знову конфлiкт по вазi при останньому замовленнi. Та сама проблема двiчi.",tag:"Повторний конфлiкт по вазi"},
-{name:"Вадим ГИФТ-К",id:"46883",history:"Олена (фiн.дир.) кiлька разiв вчила менеджера оформляти документи. Каже: 'це не перший раз'. Проблема не в одному випадку, а в системнiй нестачi знань менеджерiв по фiн.документах.",tag:"Повторюється з рiзними менеджерами"},
-{name:"Iван Гопкало",id:"61688",history:"До вiйни все було супер. 2024 рiк: 'дуже довго веземо весь рiк'. Протестував 3 компанiї, у нас найпiзнiше. Повернувся з VIP сертифiкатом, 4 реалiзацiї. Якщо затримки повторяться, пiде втретє.",tag:"Проблема 2024 року: строки"},
-{name:"Олександр Годулян Evel",id:"96073",history:"Грудень 2024: пошкодження батарей при переупаковцi. Мiнус 3 000 дол. Страховий випадок досi не закритий (6+ мiсяцiв). Повернувся 28.04.26 з мiнiмальною поставкою 590 дол. Якщо страховку не закриють, пiде остаточно.",tag:"Страховий не закритий 6+ мiс"}
+{name:"Денис LED Line",id:"54964",ltv:"2 318",reason:"Не iнформують на контрольних точках",tag:"3 рази та сама проблема",events:[
+{yr:"2021",text:"Пiшов вiд нас. Причина: не iнформують по вантажу на контрольних точках.",cls:"bad"},
+{yr:"",text:"Повернувся. Проблему не вирiшили системно.",cls:"ok"},
+{yr:"2022",text:"Пiшов вдруге. Та сама причина: строки змiнюються i не попереджують.",cls:"bad"},
+{yr:"27.11.25",text:"Повернувся. Поставка 2 399, ВП 172.",cls:"ok"},
+{yr:"2025",text:"Виїхав з країни, обороти впали, штат скоротили. Проблема з iнформуванням досi не вирiшена.",cls:"cur"}
+],quote:"Постiйно строки змiнюються i не попереджували. Затримки розумiє. Але попереджайте i iнформуйте."},
+{name:"Вiталiй ТехноЗбут24",id:"81238",ltv:"2 120",reason:"Невiрна вага, менеджер вiдмовляє перерахувати",tag:"Повторний конфлiкт по вазi",events:[
+{yr:"2023",text:"Перший конфлiкт. Рiзниця 9 кг мiж нашою вагою i вагою на Новiй Поштi. Менеджер: 'все правильно порахували'.",cls:"bad"},
+{yr:"",text:"Клiєнт пiшов.",cls:"bad"},
+{yr:"15.09.25",text:"Повернутий через ретеншн. 3 нових поставки, ВП 916.",cls:"ok"},
+{yr:"2026",text:"Знову конфлiкт по вазi при останньому замовленнi. Менеджер знову: 'все правильно'.",cls:"bad"}
+],quote:"Тi 9 кг рiзницi це не мало. Чому я маю переплачувати?"},
+{name:"Вадим ГИФТ-К",id:"46883",ltv:"2 103",reason:"Менеджер не знає фiнансових документiв",tag:"Повторюється з рiзними менеджерами",events:[
+{yr:"2020-24",text:"Олена (фiн.директор клiєнта) кiлька разiв вчила рiзних менеджерiв оформляти документи.",cls:"bad"},
+{yr:"2024",text:"Менеджер питає якою датою вiдписати видаткову. Олена: 'є ж фактична дата'.",cls:"bad"},
+{yr:"",text:"Не могли надати ТТН по Українi. Клiєнт сам все надрукував i вiдправив нам.",cls:"bad"},
+{yr:"19.11.25",text:"Олена сама зателефонувала з новим вантажем. Поставка 882, ВП 538.",cls:"ok"}
+],quote:"Менеджер не розумiється в документах. Це не перший раз що їй приходиться вчити нашого менеджера."},
+{name:"Iван Гопкало",id:"61688",ltv:"52 483 (42 реалiз.)",reason:"Затримки доставки",tag:"Проблема 2024 року: строки",events:[
+{yr:"2020-23",text:"Працював стабiльно. 42 реалiзацiї. Каже: 'ранiше все було супер'.",cls:"ok"},
+{yr:"2024",text:"'Дуже довго веземо весь 2024 рiк'. Тестував 3 компанiї, у нас найпiзнiше.",cls:"bad"},
+{yr:"23.12.24",text:"Пiшов. Причина єдина: строки. Все iнше подобається.",cls:"bad"},
+{yr:"22.09.25",text:"Повернутий. VIP сертифiкат 350 дол. 4 реалiзацiї, ВП 1 441.",cls:"ok"},
+{yr:"зараз",text:"Працює, але ризик: якщо затримки повторяться, пiде втретє.",cls:"cur"}
+],quote:"Основний i єдиний момент чому пiшов. Все iнше: сервiс, менеджери, все подобається."},
+{name:"Олександр Годулян Evel",id:"96073",ltv:"2 864",reason:"Пошкодження вантажу, страховка не працює",tag:"Страховий не закритий 6+ мiс",events:[
+{yr:"06.12.24",text:"Везли батареї. Переупакували з 2 палет на 1, палета розiрвалась, все пошкодилось. Мiнус 3 000 дол.",cls:"bad"},
+{yr:"12.2024",text:"Вiдкрили страховий випадок.",cls:"bad"},
+{yr:"6+ мiс",text:"Страховий досi не закритий. Жодного рiшення.",cls:"bad"},
+{yr:"28.04.26",text:"Повернувся з мiнiмальною поставкою 590 дол, ВП 107.",cls:"cur"}
+],quote:"Нас просто бортанули. Страховка за яку вiн платить, це лише на словах."}
 ];
 document.getElementById('rpt').innerHTML=reps.map(r=>`<div class="rpt-c">
-<div class="rpt-name">${r.name} <span style="font-size:11px;font-weight:400;color:var(--t3)">ID ${r.id}</span></div>
-<div class="rpt-hist">${r.history}</div>
+<div class="rpt-left">
+<div class="rpt-name">${r.name}</div>
+<div class="rpt-id">ID ${r.id}</div>
+<div class="rpt-ltv">LTV: ${r.ltv} дол</div>
 <div class="rpt-tag">${r.tag}</div>
+</div>
+<div class="rpt-right">
+<div class="rpt-reason">${r.reason}</div>
+<div class="rpt-tl">${r.events.map(e=>`<div class="rpt-ev ${e.cls}">${e.yr?`<span class="rpt-yr">${e.yr}</span>`:''}${e.text}</div>`).join('')}</div>
+<div class="rpt-q">${r.quote}</div>
+</div>
 </div>`).join('');
 }
 render();

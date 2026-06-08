@@ -16,7 +16,7 @@
 .hms{padding:0 40px;max-width:1200px;margin:0 auto 8px}.hmt{font-size:12px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
 .hm{display:flex;gap:6px;align-items:flex-end;height:120px}
 .hmc{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end;cursor:pointer;transition:opacity .15s}.hmc:hover{opacity:.85}.hmc.on .hml{font-weight:700;color:var(--t)}
-.hmb{width:100%;border-radius:6px 6px 0 0;transition:all .3s;position:relative;min-height:8px}.hmn{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:700;font-family:var(--m)}.hml{font-size:11px;color:var(--t2);text-align:center;line-height:1.3}
+.hmb{width:100%;border-radius:6px 6px 0 0;transition:all .3s;position:relative;min-height:8px}.hmn{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:700;font-family:var(--m);color:#382D79;text-shadow:0 0 4px #F7F6F5,0 0 4px #F7F6F5,0 0 8px #F7F6F5}.hml{font-size:11px;color:var(--t2);text-align:center;line-height:1.3}
 .fl{padding:10px 40px;max-width:1200px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap}
 .fb{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--bd);background:var(--s);color:var(--t2);transition:all .15s;font-family:var(--f)}.fb:hover{border-color:var(--al);color:var(--t)}.fb.on{background:var(--a);color:#fff;border-color:var(--a)}
 .lg{display:flex;gap:16px;padding:4px 40px 12px;max-width:1200px;margin:0 auto;flex-wrap:wrap}.lgi{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3)}.lgd{width:12px;height:4px;border-radius:2px}
@@ -52,6 +52,14 @@
 .xcc{background:#382D79;border:none;border-radius:var(--r);padding:20px 24px}.xct{font-size:14px;font-weight:700;color:#fff}.xcx{font-size:13px;color:#CCC7EA;margin-top:6px;line-height:1.5}
 .conv{max-width:1200px;margin:0 auto;padding:20px 40px}
 .conv-t{font-size:18px;font-weight:700;color:var(--a);margin-bottom:4px}.conv-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
+.ins{max-width:1200px;margin:0 auto;padding:0 40px 20px}
+.ins-t{font-size:18px;font-weight:700;color:var(--a);margin-bottom:4px}.ins-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
+.ins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ins-card{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:20px}
+.ins-card.hl{border-left:4px solid #E65500}
+.ins-num{font-size:28px;font-weight:700;color:var(--a);font-family:var(--m)}.ins-num.warn{color:#E65500}
+.ins-label{font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.ins-note{font-size:13px;color:var(--t2);margin-top:8px;line-height:1.5}
 .conv-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;height:36px}
 .conv-label{width:220px;font-size:13px;color:var(--t2);text-align:right;flex-shrink:0}
 .conv-bars{flex:1;display:flex;align-items:center;height:28px;position:relative;background:var(--alt);border-radius:4px;overflow:visible}
@@ -97,6 +105,33 @@
   <div class="lgi"><div class="lgd" style="background:var(--t3)"></div>Поодинокi</div>
 </div>
 <div class="pp" id="pp"></div>
+<div class="ins">
+  <div class="ins-t">Ретеншн: що показують цифри</div>
+  <div class="ins-sub">З файлу ретеншну Вiолетти. 28 клiєнтiв в роботi, 48 проєктiв, перiод 2025-2026.</div>
+  <div class="ins-grid">
+    <div class="ins-card">
+      <div class="ins-num">30%</div>
+      <div class="ins-label">Конверсiя розрахунок → замовлення</div>
+      <div class="ins-note">54 розрахунки, 16 замовлень. Кожен третiй повертається пiсля дзвiнка Вiолетти.</div>
+    </div>
+    <div class="ins-card hl">
+      <div class="ins-num warn">954 дол</div>
+      <div class="ins-label">Середнiй LTV повернутого клiєнта</div>
+      <div class="ins-note">При тому що P1 клiєнти мають LTV 40 000-144 000 дол. Ретеншн повертає дрiбних, а великi тiкають з коментарем "?".</div>
+    </div>
+    <div class="ins-card">
+      <div class="ins-num">26 721</div>
+      <div class="ins-label">Загальний LTV повернутих</div>
+      <div class="ins-note">28 клiєнтiв дали 26 721. Один Miss Diamond з GAP 47 996 дав би бiльше нiж весь ретеншн.</div>
+    </div>
+    <div class="ins-card">
+      <div class="ins-num">1.71</div>
+      <div class="ins-label">Середня кiлькiсть замовлень</div>
+      <div class="ins-note">Повернутий клiєнт робить менше 2 поставок. Тобто повернення ≠ утримання. Потрiбен другий крок пiсля повернення.</div>
+    </div>
+  </div>
+</div>
+
 <div class="conv" id="conv">
   <div class="conv-t">Причина вiдтоку vs повернення</div>
   <div class="conv-sub">Загальна статистика з файлiв ретеншну (не змiнюється при фiльтрацiї зверху). Зеленi = повернутi.</div>
@@ -110,8 +145,8 @@
 </div>
 
 <div class="xc"><div class="xcc">
-  <div class="xct">Наскрiзна проблема: текучка менеджерiв</div>
-  <div class="xcx">З файлу ретеншну. Власюк (LTV 15 577, 28 поставок, з 2017 року): "то був Василь, то iнша дiвчина дзвонить з того ж номеру, перестав фiксувати". Vip Systems: "дуже багато рiзних менеджерiв телефонують, по можливостi не змiнювати менеджера". Соколов (LTV 5 029): "не встигаю перемикатись". Три рiзних клiєнти з рiзним LTV, одна проблема.</div>
+  <div class="xct">Головний структурний розрив</div>
+  <div class="xcx">Ретеншн працює з клiєнтами з LTV 954 дол (середнє). P1 клiєнти з LTV 40 000-144 000 тiкають без коментаря менеджера ("?"). Один Miss Diamond (GAP 47 996) варт бiльше нiж всi 28 повернутих клiєнтiв разом (26 721). Текучка менеджерiв пiдсилює проблему: Власюк (28 поставок, з 2017): "то був Василь, то iнша дiвчина, перестав фiксувати". Vip Systems: "дуже багато рiзних менеджерiв, не змiнюйте!"</div>
 </div></div>
 <script>
 const D=[

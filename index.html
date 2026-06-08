@@ -100,6 +100,7 @@
 <div class="conv" id="conv">
   <div class="conv-t">Причина вiдтоку vs повернення</div>
   <div class="conv-sub">З файлiв ретеншну: скiльки клiєнтiв з кожною причиною вдалось повернути. Зеленi = повернутi.</div>
+  <div id="conv-rows"></div>
 </div>
 
 <div class="rpt">
@@ -203,8 +204,7 @@ const reasons=[
 {label:"Невiрна вага / доплати",total:1,returned:1,retLTV:"916"}
 ];
 const mx=Math.max(...reasons.map(r=>r.total));
-const el=document.getElementById('conv');
-let h=el.innerHTML;
+let h='';
 reasons.forEach(r=>{
 const wp=Math.max(r.total/mx*100,5);
 const rp2=r.total>0?(r.returned/r.total*100):0;
@@ -224,7 +224,7 @@ h+=`<div class="conv-row">
 </div>
 </div>`;
 });
-el.innerHTML=h;
+document.getElementById('conv-rows').innerHTML=h;
 }
 
 function rr(){

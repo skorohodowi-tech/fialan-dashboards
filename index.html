@@ -99,7 +99,7 @@
 <div class="pp" id="pp"></div>
 <div class="conv" id="conv">
   <div class="conv-t">Причина вiдтоку vs повернення</div>
-  <div class="conv-sub">З файлiв ретеншну: скiльки клiєнтiв з кожною причиною вдалось повернути. Зеленi = повернутi.</div>
+  <div class="conv-sub">Загальна статистика з файлiв ретеншну (не змiнюється при фiльтрацiї зверху). Зеленi = повернутi.</div>
   <div id="conv-rows"></div>
 </div>
 
@@ -181,7 +181,7 @@ function cp(n){const s=D.find(s=>s.stage===n);return s?s.problems.reduce((a,p)=>
 function fd(){let d=JSON.parse(JSON.stringify(D));if(fS)d=d.filter(s=>s.stage===fS);if(fC)d=d.map(s=>({...s,problems:s.problems.map(p=>({...p,cases:p.cases.filter(c=>c.cat===fC)})).filter(p=>p.cases.length>0)})).filter(s=>s.problems.length>0);return d;}
 function rs(d){const t=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.length,0),0);const ob=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.cat==='r').length,0),0);const ri=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.status==='risk').length,0),0);const wk=d.reduce((a,s)=>a+s.problems.reduce((b,p)=>b+p.cases.filter(c=>c.status==='work').length,0),0);
 document.getElementById('sts').innerHTML=[{n:t,l:"кейсiв"},{n:ob,l:"ображених"},{n:ri,l:"пiд ризиком"},{n:wk,l:"в роботi"}].map(s=>`<div class="st"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join('');}
-function rh(){const c=[1,2,3,4,5,6].map(i=>cp(i));const mx=Math.max(...c);document.getElementById('hm').innerHTML=c.map((v,i)=>{const p=mx>0?Math.max(v/mx*100,8):8;const ii=mx>0?Math.min(Math.floor(v/mx*5),5):0;const cl=HC[ii];const nc=ii>=3?'#fff':'var(--t)';const a=fS===(i+1)?' on':'';return`<div class="hmc${a}" onclick="sf(${fS===(i+1)?0:i+1},'${fC}')"><div class="hmb" style="height:${p}%;background:${cl}"><div class="hmn" style="color:${nc}">${v}</div></div><div class="hml">${SN[i+1]}</div></div>`;}).join('');}
+function rh(){const c=[1,2,3,4,5,6].map(i=>cp(i));const mx=Math.max(...c);document.getElementById('hm').innerHTML=c.map((v,i)=>{const p=mx>0?Math.max(v/mx*100,8):8;const ii=mx>0?Math.min(Math.floor(v/mx*5),5):0;const cl=HC[ii];const nc='var(--t)';const a=fS===(i+1)?' on':'';return`<div class="hmc${a}" onclick="sf(${fS===(i+1)?0:i+1},'${fC}')"><div class="hmb" style="height:${p}%;background:${cl}"><div class="hmn" style="color:${nc}">${v}</div></div><div class="hml">${SN[i+1]}</div></div>`;}).join('');}
 function rf(){const cs=["","r","n","p"],cl=["Всi","Ображенi","Не задоволенi","Чутливi до цiни"];document.getElementById('fl').innerHTML=`<div class="fb${fS===0?' on':''}" onclick="sf(0,'${fC}')">Всi етапи</div>`+cs.map((c,i)=>`<div class="fb${fC===c?' on':''}" onclick="sf(${fS},'${c}')">${cl[i]}</div>`).join('');}
 function scl(c,mx){if(!mx)return'#382D79';const r=c/mx;return r>.7?'#382D79':r>.4?'#5E47A0':r>.2?'#8B6BC4':'#AC83E9';}
 function rp(d){const mx=Math.max(...[1,2,3,4,5,6].map(i=>cp(i)));document.getElementById('pp').innerHTML=d.map(st=>{const sc=st.problems.reduce((a,p)=>a+p.cases.length,0);const bp=mx>0?Math.max(sc/mx*100,3):3;const bc=scl(sc,mx);
